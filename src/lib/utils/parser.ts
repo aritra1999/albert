@@ -29,14 +29,7 @@ export function checkWeek(week: Week, today: Date): boolean {
 }
 
 export function checkMonth(month: Month, today: Date): boolean {
-    if(month.dates) 
-        return month.dates.includes(today.getDate()) && month.months.includes(today.getMonth());
-        
-    if(month.days) 
-        return month.days.includes(today.getDay()) && month.months.includes(today.getMonth());
-
-    return false
-
+    return month.dates.includes(today.getDate()) && month.months.includes(today.getMonth());
 }
 
 export function checkYear(year: Year, today: Date): boolean {
