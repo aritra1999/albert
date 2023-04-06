@@ -74,7 +74,7 @@
         "time": ["20:00"],
         "interval": "month",
         "repeats": {
-          "date": [1],
+          "dates": [1],
           "months": [0, 3, 6, 9]
         }
       }
