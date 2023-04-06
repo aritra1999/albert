@@ -1,0 +1,140 @@
+{
+    "schedule": {
+        "Monday": {
+            "food": {
+                "breakfast": {
+                },
+                "lunch": {
+                },
+                "dinner": {
+                }
+            },
+            "attire": {
+                "outdoors": {
+                },
+                "indoors": {
+                }
+            }
+        },
+        "Tuesday": {
+
+        },
+        "Wednesday": {
+
+        },
+        "Thursday": {
+
+        },
+        "Friday": {
+
+        },
+        "Saturday": {
+
+        },
+        "Sunday": {
+
+        }
+    },
+    "events":  [
+        {
+            "title": "Clean Setup",
+            "comments": "Repeats every Sunday",
+            "timestamp": {
+                "time": "12:00:00",
+                "repeats": {
+                    "interval": "day",
+                    "days": ["Sunday"]
+                }
+            }
+        },
+        {
+            "title": "Clean keyboard",
+            "comments": "Repeats 1st day of every month",
+            "timestamp": {
+                "time": "12:00:00",
+                "repeats": {
+                    "interval": "month",
+                    "date": "1"
+                }
+            }
+        },
+        {
+            "title": "Backup master codebase",
+            "comments": "Repeats quarterly on the first day of the first month",
+            "timestamp": {
+                "time": "20:00:00",
+                "repeats": {
+                    "interval": "monthly",
+                    "date": "1",
+                    "months": ["January", "April", "July", "October"]
+                }
+            }
+        },
+        {
+            "title": "Generate expense report and pay bills",
+            "comments": "Repeats 1st day of every month",
+            "description": "To be added",
+            "timestamp": {
+                "repeats": {
+                    "interval": "monthly",
+                    "date": "1",
+                    "months": ["January", "April", "July", "October"]
+                }
+            }
+        },
+        {
+            "title": "Git commit",
+            "comments": "Repeats everyday",
+            "timestamp": {
+                "time": ["15:00"],
+                "repeats": {
+                    "interval": "everyday"
+                }
+            }
+        },
+        {
+            "title": "Workout",
+            "comments": "Repeats on some weekdays for 6 hours",
+            "timestamp": {
+                "time": ["20:00", "02:00"],
+                "repeats": {
+                    "interval": "day",
+                    "days": ["Monday", "Wednesday", "Saturday"]
+                }
+            }
+        },
+        {
+            "title": "Relocation",
+            "comments": "1st May 2023",
+            "timestamp": {
+                "time": "00:00",
+                "repeats": {
+                    "interval": "dates",
+                    "date": ["2023-05-01"]
+                }
+            }
+        },
+        {
+            "title": "Birthday",
+            "Comments": "Every year on 4th November",
+            "timestamp": {
+                "time": "00:00",
+                "repeats": {
+                    "interval": "month",
+                    "date": "4",
+                    "month": "November"
+                }
+            }
+        },
+        {
+            "title": "Standup",
+            "comments": "Repeats everyday",
+            "timestamp": {
+                "time": ["15:00"],
+                "repeats": {
+                    "interval": "everyday"
+                }
+            }
+        }
+    ]    
+}
