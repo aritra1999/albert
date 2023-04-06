@@ -21,7 +21,7 @@ export function checkDate(date: DateInterface, today: Date): boolean {
 }
 
 export function checkDay(day: Day, today: Date): boolean {
-    return day.days.includes(today.getDay()) || day.days.length == 0; 
+    return (day.days.includes(today.getDay()) || day.days.length == 0); 
 }
 
 export function checkWeek(week: Week, today: Date): boolean {
