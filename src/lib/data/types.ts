@@ -20,8 +20,7 @@ export interface Week {
 }
 
 export interface Month {
-    days?: DayEnum[];
-    dates?: number[]; 
+    dates: DayEnum[];
     months: MonthEnum[];
 }
 
