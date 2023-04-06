@@ -17,7 +17,7 @@ export function checkEvent(event: EventInterface, today: Date): boolean {
 }
 
 export function checkDate(date: DateInterface, today: Date): boolean {
-    return false;
+    return date.dates.includes(today.toLocaleDateString());
 }
 
 export function checkDay(day: Day, today: Date): boolean {
@@ -25,13 +25,15 @@ export function checkDay(day: Day, today: Date): boolean {
 }
 
 export function checkWeek(week: Week, today: Date): boolean {
-    return true; 
+    const startDate = new Date(today.getFullYear(), 0, 1);
+    const currentWeek = Math.floor((today.valueOf() - startDate.valueOf()) / (24 * 60 * 60 * 1000));
+    return week.weeks.includes(currentWeek); 
 }
 
 export function checkMonth(month: Month, today: Date): boolean {
-    return month.dates.includes(today.getDate()) && month.months.includes(today.getMonth());
+    return month.dates.includes(today.getDate()) && (month.months.includes(today.getMonth()) || month.months.length == 0);
 }
 
 export function checkYear(year: Year, today: Date): boolean {
-    return true;
+    return year.years.includes(today.getFullYear());
 }

@@ -3,6 +3,7 @@
 // 2. Weekdays - eg: standup - DONE
 // 3. Everyday - eg: Git commit - DONE
 // 4. Few days of the week - eg: working out 3 times a week, laundry 2 times a week
+// 5. Once a quarter / Jan, April, July, October - eg: quarterly reports / code backup / 
 
 import { filterEvents } from './parser';
 import mockData from '$lib/data/master.json';
