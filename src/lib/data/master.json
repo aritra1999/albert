@@ -1,0 +1,127 @@
+{
+  "schedule": {
+    "Monday": {
+      "food": {
+        "breakfast": {},
+        "lunch": {},
+        "dinner": {}
+      },
+      "attire": {
+        "outdoors": {},
+        "indoors": {}
+      }
+    },
+    "Tuesday": {},
+    "Wednesday": {},
+    "Thursday": {},
+    "Friday": {},
+    "Saturday": {},
+    "Sunday": {}
+  },
+  "events": [
+    {
+      "title": "Birthday",
+      "comment": "Every year on 4th November",
+      "timestamp": {
+        "time": ["00:00"],
+        "interval": "month",
+        "repeats": {
+          "dates": [4],
+          "months": [10]
+        }
+      }
+    },
+    {
+      "title": "Clean Setup",
+      "comment": "Repeats every Sunday",
+      "timestamp": {
+        "time": ["12:00"],
+        "interval": "day",
+        "repeats": {
+          "days": [0]
+        }
+      }
+    },
+    {
+      "title": "Clean keyboard",
+      "comment": "Repeats 1st day of every month",
+      "timestamp": {
+        "time": ["12:00"],
+        "interval": "month",
+        "repeats": {
+          "dates": [1],
+          "months": []
+        }
+      }
+    },
+    {
+      "title": "Backup master codebase",
+      "comment": "Repeats quarterly on the first day of the first month",
+      "timestamp": {
+        "time": ["20:00"],
+        "interval": "month",
+        "repeats": {
+          "dates": [1],
+          "months": [0, 3, 6, 9]
+        }
+      }
+    },
+    {
+      "title": "Generate expense report and pay bills",
+      "comment": "Repeats 1st day of every month",
+      "description": "To be added",
+      "timestamp": {
+        "time": ["20:00"],
+        "interval": "month",
+        "repeats": {
+          "date": [1],
+          "months": [0, 3, 6, 9]
+        }
+      }
+    },
+    {
+      "title": "Git commit",
+      "comment": "Repeats everyday",
+      "timestamp": {
+        "time": ["15:00"],
+        "interval": "day",
+        "repeats": {
+          "days": []
+        }
+      }
+    },
+    {
+      "title": "Workout",
+      "comment": "Repeats on some weekdays for 6 hours",
+      "timestamp": {
+        "time": ["20:00", "02:00"],
+        "interval": "day",
+        "repeats": {
+          "days": [1, 3, 6]
+        }
+      }
+    },
+    {
+      "title": "Relocation",
+      "comment": "1st May 2023",
+      "timestamp": {
+        "time": ["00:00"],
+        "interval": "date",
+        "repeats": {
+          "dates": ["05/01/2023"]
+        }
+      }
+    },
+    {
+      "title": "Standup",
+      "comment": "Repeats every weekday",
+      "timestamp": {
+        "time": ["15:00"],
+        "interval": "day",
+        "repeats": {
+          "days": [1, 2, 3, 4, 5]
+        }
+      }
+    }
+  ]
+}
