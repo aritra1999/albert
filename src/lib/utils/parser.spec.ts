@@ -3,7 +3,7 @@
 // 2. Weekdays - eg: standup - DONE
 // 3. Everyday - eg: Git commit - DONE
 // 4. Few days a week - eg: working out 3 times a week, laundry 2 times a week - DONE
-// 5. Once a quarter / Jan, April, July, October - eg: quarterly reports / code backup
+// 5. Once a quarter / Jan, April, July, October - eg: quarterly reports / code backup - DONE
 // 6, Once a week - eg: cleaning devices
 // 7. Once a month - eg: pay bills / pay rent
 // 8. Specific date - eg: One time events
@@ -159,6 +159,83 @@ describe('Testing all possible events', () => {
 			const today = new Date('10/10/2021'); // Sunday
 			expect(filterEvents(mockData.events as EventInterface[], today)).not.toContainEqual(
 				expect.objectContaining(workingOutEvent)
+			);
+		});
+	});
+
+	describe('Once a quarter / Jan, April, July, October - eg: quarterly reports / code backup', () => {
+		const quarterlyReportsEvent: EventInterface = {
+			title: 'Backup master codebase',
+			comment: 'Repeats quarterly on the first day of the first month',
+			timestamp: {
+				time: ['20:00'],
+				interval: Interval.month,
+				repeats: {
+					dates: [1],
+					months: [0, 3, 6, 9]
+				}
+			}
+		};
+		it('checking on a January, for event - should contain quarterly reports event', () => {
+			const today = new Date('01/01/2021'); // January
+			expect(filterEvents(mockData.events as EventInterface[], today)).toContainEqual(
+				expect.objectContaining(quarterlyReportsEvent)
+			);
+		});
+		it('checking on a April, for event - should contain quarterly reports event', () => {
+			const today = new Date('04/01/2021'); // April
+			expect(filterEvents(mockData.events as EventInterface[], today)).toContainEqual(
+				expect.objectContaining(quarterlyReportsEvent)
+			);
+		});
+		it('checking on a July, for event - should contain quarterly reports event', () => {
+			const today = new Date('07/01/2021'); // July
+			expect(filterEvents(mockData.events as EventInterface[], today)).toContainEqual(
+				expect.objectContaining(quarterlyReportsEvent)
+			);
+		});
+		it('checking on a October, for event - should contain quarterly reports event', () => {
+			const today = new Date('10/01/2021'); // October
+			expect(filterEvents(mockData.events as EventInterface[], today)).toContainEqual(
+				expect.objectContaining(quarterlyReportsEvent)
+			);
+		});
+		it('checking on a December, for event - should not contain quarterly reports event', () => {
+			const today = new Date('12/01/2021'); // December
+			expect(filterEvents(mockData.events as EventInterface[], today)).not.toContainEqual(
+				expect.objectContaining(quarterlyReportsEvent)
+			);
+		});
+	});
+
+	describe('Once a week - eg: cleaning devices', () => {
+		const cleaningDevicesEvent: EventInterface = {
+			title: 'Clean Setup',
+			comment: 'Repeats every Sunday',
+			timestamp: {
+				time: ['12:00'],
+				interval: Interval.day,
+				repeats: {
+					days: [0]
+				}
+			}
+		};
+		it('checking on a Monday, for event - should contain cleaning devices event', () => {
+			const today = new Date('10/03/2021'); // Sunday
+			expect(filterEvents(mockData.events as EventInterface[], today)).toContainEqual(
+				expect.objectContaining(cleaningDevicesEvent)
+			);
+		});
+		it('checking on a Tuesday, for event - should not contain cleaning devices event', () => {
+			const today = new Date('10/05/2021'); // Tuesday
+			expect(filterEvents(mockData.events as EventInterface[], today)).not.toContainEqual(
+				expect.objectContaining(cleaningDevicesEvent)
+			);
+		});
+		it('checking on a Wednesday, for event - should not contain cleaning devices event', () => {
+			const today = new Date('10/06/2021'); // Wednesday
+			expect(filterEvents(mockData.events as EventInterface[], today)).not.toContainEqual(
+				expect.objectContaining(cleaningDevicesEvent)
 			);
 		});
 	});
