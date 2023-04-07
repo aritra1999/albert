@@ -239,4 +239,39 @@ describe('Testing all possible events', () => {
 			);
 		});
 	});
+
+	describe('Once a month - eg: paying bills / pay rent', () => {
+		const payingBillsEvent: EventInterface = {
+			title: 'Clean keyboard',
+			comment: 'Repeats 1st day of every month',
+			timestamp: {
+				time: ['12:00'],
+				interval: Interval.month,
+				repeats: {
+					dates: [1],
+					months: []
+				}
+			}
+		};
+		it('checking on a 1st day of the month, for event - should contain paying bills event', () => {
+			const today = new Date('10/01/2021'); // 1st day of the month
+			expect(filterEvents(mockData.events as EventInterface[], today)).toContainEqual(
+				expect.objectContaining(payingBillsEvent)
+			);
+		});
+		it('checking on a 2nd day of the month, for event - should not contain paying bills event', () => {
+			const today = new Date('10/02/2021'); // 2nd day of the month
+			expect(filterEvents(mockData.events as EventInterface[], today)).not.toContainEqual(
+				expect.objectContaining(payingBillsEvent)
+			);
+		});
+		it('checking on a 3rd day of the month, for event - should not contain paying bills event', () => {
+			const today = new Date('10/03/2021'); // 3rd day of the month
+			expect(filterEvents(mockData.events as EventInterface[], today)).not.toContainEqual(
+				expect.objectContaining(payingBillsEvent)
+			);
+		});
+	});
+
+	
 });
