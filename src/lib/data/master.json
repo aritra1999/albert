@@ -122,6 +122,17 @@
           "days": [1, 2, 3, 4, 5]
         }
       }
-    }
+    },
+    {
+      "title": "Laundry",
+      "comment": "Twice a week, on Wednesday and Saturday",
+      "timestamp": {
+        "time": ["12:00"],
+        "interval": "day",
+        "repeats": {
+          "days": [2, 5]
+        }
+      }
+    } 
   ]
 }
