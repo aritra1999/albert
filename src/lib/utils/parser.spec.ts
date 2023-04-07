@@ -1,16 +1,15 @@
-// Cases - All cases should have two tests, one for success and one for failure
+// Cases - All cases should have at least two tests, one for success and one for failure
 // 1. Once every year - eg: birthday, anniversary - DONE
 // 2. Weekdays - eg: standup - DONE
 // 3. Everyday - eg: Git commit - DONE
 // 4. Few days a week - eg: working out 3 times a week, laundry 2 times a week - DONE
 // 5. Once a quarter / Jan, April, July, October - eg: quarterly reports / code backup - DONE
-// 6, Once a week - eg: cleaning devices
-// 7. Once a month - eg: pay bills / pay rent
-// 8. Specific date - eg: One time events
-
+// 6, Once a week - eg: cleaning devices - DONE
+// 7. Once a month - eg: pay bills / pay rent - DONE
+// 8. Specific date - eg: One time events - DONE
 
 import { filterEvents } from './parser';
-import mockData from '$lib/data/master.json';
+import mockData from '$lib/utils/mock.json';
 import { Interval, type EventInterface } from '$lib/data/types';
 
 import { describe, expect, it } from 'vitest';
@@ -273,5 +272,35 @@ describe('Testing all possible events', () => {
 		});
 	});
 
-	
+	describe('Specific days - eg: One time events', () => {
+		const oneTimeEvent: EventInterface = {
+			title: 'Relocation',
+			comment: '1st May 2023',
+			timestamp: {
+				time: ['00:00'],
+				interval: Interval.date,
+				repeats: {
+					dates: ['05/01/2023']
+				}
+			}
+		};
+		it('checking on a 1st of January, for event - should contain one time event', () => {
+			const today = new Date('05/01/2023'); // 1st of January
+			expect(filterEvents(mockData.events as EventInterface[], today)).toContainEqual(
+				expect.objectContaining(oneTimeEvent)
+			);
+		});
+		it('checking on a 2nd of January, for event - should not contain one time event', () => {
+			const today = new Date('01/02/2021'); // 2nd of January
+			expect(filterEvents(mockData.events as EventInterface[], today)).not.toContainEqual(
+				expect.objectContaining(oneTimeEvent)
+			);
+		});
+		it('checking on a 1st of February, for event - should not contain one time event', () => {
+			const today = new Date('02/01/2021'); // 1st of February
+			expect(filterEvents(mockData.events as EventInterface[], today)).not.toContainEqual(
+				expect.objectContaining(oneTimeEvent)
+			);
+		});
+	});
 });
