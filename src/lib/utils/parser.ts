@@ -17,7 +17,7 @@ export function checkEvent(event: EventInterface, today: Date): boolean {
 }
 
 export function checkDate(date: DateInterface, today: Date): boolean {
-    return date.dates.includes(today.toLocaleDateString());
+    return date.dates.includes(today.toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' }));
 }
 
 export function checkDay(day: Day, today: Date): boolean {
