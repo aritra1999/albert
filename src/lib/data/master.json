@@ -75,7 +75,7 @@
         "interval": "month",
         "repeats": {
           "dates": [1],
-          "months": [0, 3, 6, 9]
+          "months": []
         }
       }
     },

@@ -2,8 +2,12 @@
 // 1. Once every year - eg: birthday, anniversary - DONE
 // 2. Weekdays - eg: standup - DONE
 // 3. Everyday - eg: Git commit - DONE
-// 4. Few days of the week - eg: working out 3 times a week, laundry 2 times a week
-// 5. Once a quarter / Jan, April, July, October - eg: quarterly reports / code backup / 
+// 4. Few days a week - eg: working out 3 times a week, laundry 2 times a week - DONE
+// 5. Once a quarter / Jan, April, July, October - eg: quarterly reports / code backup
+// 6, Once a week - eg: cleaning devices
+// 7. Once a month - eg: pay bills / pay rent
+// 8. Specific date - eg: One time events
+
 
 import { filterEvents } from './parser';
 import mockData from '$lib/data/master.json';
@@ -115,7 +119,7 @@ describe('Testing all possible events', () => {
 		});
 	});
 
-	describe('Few days of the week - eg: working out 3 times a week, laundry 2 times a week', () => {
+	describe('Few days a week - eg: working out 3 times a week, laundry 2 times a week', () => {
 		const workingOutEvent: EventInterface = {
 			title: 'Workout',
 			comment: 'Repeats on some weekdays for 6 hours',
