@@ -1,7 +1,14 @@
 import type { Day, Week, Month, Year, EventInterface, DateInterface } from "$lib/data/types";
 
+export function compareEventStartTime(eventA: EventInterface, eventB: EventInterface): number {
+    if(!eventA.timestamp.time || !eventB.timestamp.time) return 0;
+    if(eventA.timestamp.time[0] < eventB.timestamp.time[0]) return -1;
+    if(eventB.timestamp.time[0] > eventB.timestamp.time[0]) return 1;
+    return 0;
+}
+
 export function filterEvents(events: EventInterface[], today: Date = new Date()): EventInterface[] {
-    return events.filter((event) => checkEvent(event, today));
+    return events.filter((event) => checkEvent(event, today)).sort(compareEventStartTime);
 }
 
 export function checkEvent(event: EventInterface, today: Date): boolean {
