@@ -19,7 +19,7 @@
 
 <div class="flex justify-between items-center border-b boder-slate-300 py-4">
 
-    <input type="date" on:change={updateEvents} bind:value={localeDateString}>
+    <input class="rounded-lg border-none bg-slate-100 text-slate-800 text-sm" type="date" on:change={updateEvents} bind:value={localeDateString}>
 	
     <div class="flex items-center space-x-4">
 		<div class="flex items-center rounded hover:bg-slate-100 py-2 px-4">
