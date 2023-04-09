@@ -7,8 +7,8 @@ export function getTimeDifference(time: string[]): string {
     const hoursDifference = Math.floor(totalDifference / (1000 * 60 * 60));
     const minsDifference = Math.floor((totalDifference % (1000 * 60 * 60)) / (1000 * 60));
 
-    let timeDiffString = (hoursDifference > 0) ? `${hoursDifference} hours` : '';
-    if (minsDifference > 0) timeDiffString += ` ${minsDifference} minutes`;
+    let timeDiffString = (hoursDifference > 0) ? `${hoursDifference} H` : '';
+    if (minsDifference > 0) timeDiffString += ` ${minsDifference} M`;
 
     return timeDiffString.trim().length > 0 ? timeDiffString.trim() : FULL_DAY;
 }

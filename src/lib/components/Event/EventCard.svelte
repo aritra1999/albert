@@ -11,22 +11,23 @@
 </script>
 
 <div class="bg-slate-100 my-2 p-2 rounded">
-    <div class="flex divide-x-4 divide-blue-500">
-        <div class="w-36 py-2 px-4">
+    <div class="flex divide-x-4 divide-blue-600">
+        <div class="w-36 flex flex-col justify-center py-2 px-2">
             {#if event.timestamp.time}
-                <div class="font-medium text-sm">
-                    {formatTime(event.timestamp.time[0])}
-                    <!-- {#if event.timestamp.time[1]}
-                        - {formatTime(event.timestamp.time[1])}
-                    {/if}
-                     -->
-                </div>
+                <div class="font-medium">{formatTime(event.timestamp.time[0])}</div>
                 <div class="text-xs text-slate-500">{getTimeDifference(event.timestamp.time)}</div>
             {/if}
         </div>
-        <div class="w-full py-2 px-4">
-            <div class="flex items-start justify-between">
-                <div class="font-semibold {done ? 'line-through': ''}">{event.title}</div>
+        <div class="w-full flex flex-col justify-center py-2 px-4">
+            <div class="flex justify-between">
+                <div>
+                    <div class="text-lg font-semibold mb-2 {done ? 'line-through': ''}">{event.title}</div>
+                    {#if event.timestamp.time && event.timestamp.time[1]}
+                        <div class="text-xs text-slate-500">
+                            {formatTime(event.timestamp.time[0])}{#if event.timestamp.time[1]} - {formatTime(event.timestamp.time[1])}{/if}
+                        </div>
+                    {/if}
+                </div>
                 {#if !done }
                     <button on:click={toggleDone} class="text-slate-700 hover:bg-blue-500 hover:text-white text-xs px-2 py-0.5 rounded-full">Mark Done?</button>
                 {:else}
