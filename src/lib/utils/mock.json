@@ -82,6 +82,7 @@
 		{
 			"title": "Git commit",
 			"comment": "Repeats everyday",
+			"description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora provident fugit fuga consequatur cupiditate placeat vitae incidunt qui quae ipsum iste et praesentium delectus culpa, ut molestiae quam dignissimos laudantium?",
 			"timestamp": {
 				"time": ["15:00"],
 				"interval": "day",
@@ -93,7 +94,7 @@
 		{
 			"title": "Workout",
 			"comment": "Repeats on some weekdays for 6 hours",
-			"description": "",
+			"description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi quidem non voluptatum aspernatur officiis dolorem a libero corrupti ipsam earum exercitationem, rerum accusamus labore eligendi iusto dolores, beatae nulla doloribus.",
 			"timestamp": {
 				"time": ["07:00", "08:00"],
 				"interval": "day",
