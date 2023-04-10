@@ -13,8 +13,37 @@
     
 </script>
 
-<div class="{done ? 'bg-stone-100': 'bg-slate-100'} my-2 p-2 rounded">
-    <div class="flex divide-x-4 divide-blue-600">
+<div class="{done ? 'bg-indigo-200 line-through': 'bg-indigo-100'} my-2 p-4 rounded-3xl">
+    <div class="flex items-center justify-between">
+        <div class="text-2xl font-semibold">{event.title}</div>
+        {#if !done }
+            <button on:click={toggleDone} class="text-slate-700 hover:bg-blue-500 hover:text-white text-xs px-2 py-0.5 rounded-full">Mark Done?</button>
+        {:else}
+            <button on:click={toggleDone}>✅</button>
+        {/if}
+    </div>
+    <div class="w-full">
+        {#if event.description}
+            <div class="prose prose-sm text-sm">
+                <SvelteMarkdown source={event.description.slice(0, showMore ? event.description.length : 25)} />
+            </div>
+            {#if event.description.length > 25}
+                <button on:click={toggleShowMore} class="text-blue-100 px-2 py-0.5 bg-blue-500 rounded-full text-xs">
+                    {#if showMore} less {:else} more {/if}
+                </button>    
+            {/if}
+        {/if}
+    </div>
+    {#if event.timestamp.time}
+        <div class="flex items-center justify-between font-medium mt-2">
+            <div class="text-xl">{formatTime(event.timestamp.time[0])}</div>
+            <div class="px-3 py-0.5 rounded-full bg-indigo-500 text-white text-md">{getTimeDifference(event.timestamp.time)}</div>
+            {#if event.timestamp.time[1]}
+                <div class="text-xl">{formatTime(event.timestamp.time[1])}</div>
+            {/if}
+        </div>
+    {/if}
+    <!-- <div class="flex divide-x-4 divide-blue-600">
         <div class="w-36 flex flex-col justify-center py-2 px-2">
             {#if event.timestamp.time}
                 <div class="font-medium">{formatTime(event.timestamp.time[0])}</div>
@@ -54,5 +83,5 @@
                 {/if}
             </div>
         </div>
-    </div>
+    </div> -->
 </div>
