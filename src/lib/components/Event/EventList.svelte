@@ -5,7 +5,7 @@
     export let events: EventInterface[]; 
 </script>
 
-<h2 class="font-medium text-4xl my-5">Events</h2>
+<h2 class="font-medium text-4xl my-5 magic-title">Events</h2>
 {#each events as event}
     <EventCard event={event} />
 {/each}

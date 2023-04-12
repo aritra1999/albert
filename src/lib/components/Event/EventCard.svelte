@@ -13,9 +13,9 @@
     
 </script>
 
-<div class="{done ? 'bg-indigo-200 line-through': 'bg-indigo-100'} my-2 p-4 rounded-3xl">
+<div class="{done ? 'bg-indigo-200 line-through': 'bg-indigo-100'} my-2 p-4 md:p-8 rounded-3xl">
     <div class="flex items-center justify-between">
-        <div class="text-2xl font-semibold">{event.title}</div>
+        <div class="text-2xl font-normal  magic-title">{event.title}</div>
         {#if !done }
             <button on:click={toggleDone} class="text-slate-700 hover:bg-blue-500 hover:text-white text-xs px-2 py-0.5 rounded-full">Mark Done?</button>
         {:else}
