@@ -16,8 +16,8 @@
 
 </script>
 
-<div class="flex justify-between items-center px-3 py-6">
-    <input class="rounded-lg border-none bg-transparent text-slate-50 text-xl font-medium" type="date" on:change={updateEvents} bind:value={localeDateString}>
+<div class="flex justify-between items-center px-3 py-6 h-24 top-0 container z-0">
+    <input class="rounded-full px-4 py-3 border-none bg-transparent bg-white text-md font-medium z-10" type="date" on:change={updateEvents} bind:value={localeDateString}>
     <div class="flex items-center space-x-4">
 		<div class="flex items-center rounded-full hover:bg-slate-800 py-2 px-2 sm:px-4 text-slate-50">
             <span class="hidden sm:block">Events</span>
@@ -34,6 +34,6 @@
 	</div>
 </div>
 
-<div class="bg-white p-3 sm:p-6 md:p-12 rounded-b rounded-3xl min-h-screen">
+<div class="bg-white p-2 sm:p-6 md:p-12 rounded-b rounded-3xl min-h-screen z-10">
     <EventList events={events}/>
 </div>

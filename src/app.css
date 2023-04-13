@@ -2,8 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: 'MagicTitle';
+    src: url('https://uploads-ssl.webflow.com/60c0a5bb9df18e0c7bea5c2c/6240852469e987dea662d068_font.woff');
+}
+
 html, body {
     font-family: 'Inter', sans-serif;
 }
 
 .leading-9 {line-height: 2.25rem !important;}
+.magic-title {
+    font-family: 'MagicTitle';
+}
